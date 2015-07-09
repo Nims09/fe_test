@@ -5,6 +5,29 @@ app = angular.module('app', []);
 
 app.controller('TestAppCtrl', [
   '$scope', function($scope) {
+    $scope.contactFields = [
+      {
+        title: 'First Name',
+        id: 'firstname',
+        value: ''
+      }, {
+        title: 'Last Name',
+        id: 'lastname',
+        value: ''
+      }, {
+        title: 'Email',
+        id: 'email',
+        value: 'nm@fake.com'
+      }, {
+        title: 'Phone Numer',
+        id: 'phonenumer',
+        value: '555-555-5565'
+      }, {
+        title: 'Postal Code',
+        id: 'postalcode',
+        value: 'Z9Z 9Z9'
+      }
+    ];
     $scope.aboutFields = [
       {
         title: 'Technical',
@@ -39,16 +62,16 @@ app.controller('TestAppCtrl', [
         id: 'experience',
         panes: [
           {
-            title: '',
-            content: 'Trusterra Technologies: Software Development Co-op',
+            title: 'Trusterra Technologies',
+            content: 'Software Development Co-op',
             time: '2014-05 - 2014-09'
           }, {
-            title: '',
-            content: 'Neverblue: Software Developer and Support Co-op',
+            title: 'Neverblue',
+            content: 'Software Developer and Support Co-op',
             time: '2013-05 - 2013-08'
           }, {
-            title: '',
-            content: 'Genologics: Software Developer Co-op',
+            title: 'Genologics',
+            content: 'Software Developer Co-op',
             time: '2012-06 - 2012-12'
           }
         ]
@@ -57,25 +80,25 @@ app.controller('TestAppCtrl', [
         id: 'volunteer',
         panes: [
           {
-            title: '',
-            content: 'Yelp Sentiment Analysis Mining',
-            time: ''
+            title: 'Yelp',
+            content: 'Sentiment Analysis Mining',
+            time: '2015'
           }, {
-            title: '',
-            content: 'Microsoft Studios: Code4Cash Hackathon 2014 & 2015',
-            time: ''
+            title: 'Microsoft Studios',
+            content: 'Code4Cash Hackathon',
+            time: '2014, 2015'
           }, {
-            title: '',
-            content: 'Personal Project: Twitter API Miner',
-            time: ''
+            title: 'Personal Project',
+            content: 'Twitter API Miner',
+            time: '2014'
           }, {
-            title: '',
-            content: 'Microsoft Studios: Kinect Hackathon',
-            time: ''
+            title: 'Microsoft Studios',
+            content: 'Kinect Hackathon',
+            time: '2013'
           }, {
-            title: '',
-            content: 'University of Victoria Programming Club',
-            time: ''
+            title: 'University of Victoria ',
+            content: 'Programming Club',
+            time: '2013'
           }
         ]
       }

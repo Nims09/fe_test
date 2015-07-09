@@ -11,14 +11,10 @@
     margin-bottom: 0;
 }
 
-.divLast 
-{
-   top: 0px;
-   margin:0px;  
-   padding: 0px 2px 2px 3px;    
-   border-width: 2px;
-   border-bottom-width:2px;
-   border-bottom-color:Black;
-   border-bottom-style: solid;
-   width: 100%;
+.pane {
+	border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+
 }
+
