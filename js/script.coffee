@@ -6,12 +6,12 @@ app.controller('TestAppCtrl', ['$scope', ($scope)->
 			{
 				title: 'First Name',
 				id: 'firstname',
-				value: ''
+				value: 'Nathan'
 			},
 			{
 				title: 'Last Name',
 				id: 'lastname',
-				value: ''
+				value: 'Mots'
 			},
 			{
 				title: 'Email',

@@ -65,12 +65,23 @@
 	    		<h4>Contact Info</h4>
 
 	    		<div class="pane">
-						<div ng-repeat="field in contactFields">
-								<h5><small>{{field.title}}</small></h5>
-								<span>{{field.value}}</span>
-						</div>						
-					</div>	    			
-	    		</div>
+					<div ng-repeat="field in contactFields">
+							<h5><small>{{field.title}}</small></h5>
+							<span>{{field.value}}</span>
+					</div>	
+					<form action="post_script.php" method="POST">
+						<h5><small>Reason for interest</small></h5>
+					    <input name="field2" class="form-control" rows="2" type="text" />
+					    <input type="submit" name="submit" class="btn btn-primary button-right" value="Save Data">
+					</form>
+
+					<!-- <div class="form-group">
+						<h5><small>Reason for interest</small></h5>
+						<textarea class="form-control" rows="2"></textarea>
+						<button type="button" class="btn btn-primary button-right">Print</button>
+					</div>					 -->
+				</div>	    			
+	    	</div>
 
 	    	</div>
 	    </div>
