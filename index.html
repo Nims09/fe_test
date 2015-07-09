@@ -69,9 +69,10 @@
 							<h5><small>{{field.title}}</small></h5>
 							<span>{{field.value}}</span>
 					</div>	
-					<form action="post_script.php" method="POST">
+					<!-- Note: This only uses one field, as I thought adding the fields didn't make sense with the other information, so I added a 'reason field' to submit, with my own PHP script, instead of all the fields and the other one. -->
+					<form action="textwriter.php" method="POST">
 						<h5><small>Reason for interest</small></h5>
-					    <input name="field2" class="form-control" rows="2" type="text" />
+					    <input name="field1" class="form-control" rows="2" type="text" />
 					    <input type="submit" name="submit" class="btn btn-primary button-right" value="Save Data">
 					</form>
 
