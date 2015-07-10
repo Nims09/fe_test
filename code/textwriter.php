@@ -4,7 +4,7 @@ if(isset($_POST['field1'])) {
 
     $data = sanitizeInput($data);
 
-    $ret = file_put_contents('FULL_PATH_TO/tmp/mydata.txt', $data, FILE_APPEND | LOCK_EX);
+    $ret = file_put_contents('/Applications/XAMPP/xamppfiles/htdocs/tmp/mydata.txt', $data, FILE_APPEND | LOCK_EX);
     if($ret === false) {
         die('There was an error writing this file');
     }

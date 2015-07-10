@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Resume Page</title>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Resume Page</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,84 +14,108 @@
 	<!-- ExtraCSS -->
 	<link rel="stylesheet" href="css/extra.css">	
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
 
-    <!-- Angular -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<!-- Angular -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 
-    <!-- External JS extras -->
-    <script src="js/script.js"></script>
+	<!-- External JS extras -->
+	<script src="js/script.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body ng-app="app">
-  	<div ng-controller="TestAppCtrl" id="TestAppCtrl" class="container">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	</head>
+	<body ng-app="app">
+		<div ng-controller="TestAppCtrl" id="TestAppCtrl" class="container">
 
-	  	<div class="row">
-	  		<h3>Nathan's Resume</h3>
-	  	</div>
+			<div class="row">
+				<h3>Nathan's Resume</h3>
+			</div>
 
-	    <div class="row">
-	    	<div class="col-sm-6 col-xs-12"> 
-	    		<h4>About</h4>
-	    		<div>
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li ng-repeat="field in aboutFields" role="presentation" ng-class='{active:$first}'><a href="#{{field.id}}" aria-controls="{{field.id}}" role="tab" data-toggle="tab">{{field.title}}</a></li>
-					</ul>
+			<div class="row">
+				<div class="col-sm-6 col-xs-12"> 
+					<h4>About</h4>
+					<div>
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li ng-repeat="field in aboutFields" role="presentation" ng-class='{active:$first}'><a href="#{{field.id}}" aria-controls="{{field.id}}" role="tab" data-toggle="tab">{{field.title}}</a></li>
+						</ul>
 
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div ng-repeat="field in aboutFields" role="tabpanel" class="tab-pane" ng-class='{active:$first}' id="{{field.id}}" >
-							<div ng-repeat="pane in field.panes">
-								<h5><small>{{pane.title}}</small></h5>
-								<span>{{pane.content}}</span>
-								<div class="text-right"><small>{{pane.time}}</small></div>
-							</div>
-						</div>						
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div ng-repeat="field in aboutFields" role="tabpanel" class="tab-pane" ng-class='{active:$first}' id="{{field.id}}" >
+								<div ng-repeat="pane in field.panes">
+									<h5><small>{{pane.title}}</small></h5>
+									<span>{{pane.content}}</span>
+									<div class="text-right"><small>{{pane.time}}</small></div>
+								</div>
+							</div>						
+						</div>
 					</div>
-	    		</div>
-	    	</div>
-	    	<div class="col-sm-6 col-xs-12"> 
-	    		<h4>Contact Info</h4>
+				</div>
+				<div class="col-sm-6 col-xs-12"> 
+					<h4>Contact Info</h4>
 
-	    		<div class="pane">
-					<div ng-repeat="field in contactFields">
-							<h5><small>{{field.title}}</small></h5>
-							<span>{{field.value}}</span>
-					</div>	
-					<!-- Note: This only uses one field, as I thought adding the fields didn't make sense with the other information, so I added a 'reason field' to submit, with my own PHP script, instead of all the fields and the other one. -->
-					<form action="textwriter.php" method="POST">
-						<h5><small>Reason for interest</small></h5>
-					    <input name="field1" class="form-control" rows="2" type="text" />
-					    <input type="submit" name="submit" class="btn btn-primary button-right" value="Save Data">
-					</form>
-				</div>	    			
-	    	</div>
+					<div class="pane">
+						<div ng-repeat="field in contactFields">
+								<h5><small>{{field.title}}</small></h5>
+								<span>{{field.value}}</span>
+						</div>	
+						<!-- Note: This only uses one field, as I thought adding the fields didn't make sense with the other information, so I added a 'reason field' to submit, with my own PHP script, instead of all the fields and the other one. But if I where to use the other one I would follow similair prinicipals just with more fields -->
+						<form id="reasoninput">
+							<h5><small>Reason for interest</small></h5>
+						    <input id="reasoninput" name="field1" class="form-control" rows="2" type="text" />
 
-	    	</div>
-	    </div>
+						    <input type="submit" name="submit" id="submit" class="btn btn-primary button-right" value="Save Data">
 
-	</div>
+							<script type="text/javascript">
+								var request;
+							    $('#reasoninput').submit(function(event){
+							    	if (request) {
+							    		request.abort();
+							    	}
 
+							    	var $form = $(this);
 
+							    	var $inputs = $form.find("input, button, select");
 
+							    	var serialized = $form.serialize();
 
+							    	$inputs.prop("disabled", true);
 
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+									request = $.ajax({
+									   url: "/code/textwriter.php",
+									   type: "post",
+									   data: serialized
+									});
+									request.done(function (response, textStatus, jqXHR){
+										console.log("Success.");
+										document.getElementById("reasoninput").reset();
+									});
+									request.fail(function (jqXHR, textStatus, errorThrown){
+										console.error(
+											"The following error occurred: "+
+											textStatus, errorThrown
+										);
+									});
+									request.always(function () {
+										// Reenable the inputs
+										$inputs.prop("disabled", false);
+									});								
+							    });
+							</script>			
+						</form>
+					</div>	    			
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
